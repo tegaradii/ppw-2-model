@@ -22,7 +22,7 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function created()
     {
         return view('buku.create');
     }
@@ -57,7 +57,7 @@ class BookController extends Controller
     {
         $buku = Buku::find($id);
         return view('buku.update', compact('buku'));
-        
+
     }
 
     /**

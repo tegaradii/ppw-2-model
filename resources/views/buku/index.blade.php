@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 class="text-center m-3">SISTEM INFORMASI BUKU</h1>
-    <a href="{{ route('buku.create') }}" class="btn btn-primary float-end m-3">Tambah Buku</a>
+    <a href="{{ route('buku.create')}}" class="btn btn-primary float-end m-3">Tambah Buku</a>
     <table class="table m-3" border="1">
         <thead>
             <th>id</th>
@@ -28,14 +28,14 @@
                     <td>{{ "Rp. ".number_format($buku->harga, 2, ",", ".") }}</td>
                     <td>{{ $buku->tgl_terbit }}</td>
                     <td>
-                        <form action="{{  route('buku.destroy', $buku->id) }}" method="post">
+                        <form action="{{ route('buku.destroy', $buku->id)  }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button onclick="return confirm('Yakin mau di hapus?')" type="submit" class="btn btn-danger">Hapus</button>
                         </form>
                     </td>
                     <td>
-                        <a class="btn btn-secondary" href="{{ route('buku.edit', $buku->id) }}">Update</a>
+                        <a class="btn btn-secondary" href="{{ route('buku.edit', $buku->id) }}">Edit</a>
                     </td>
                 </tr>
             @endforeach
